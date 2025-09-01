@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Roomora | Vehicle booking</title>
+  <link rel="stylesheet" href="vehicle.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="main.html">Home</a>
+      <a href="hotel.html">Hotel</a>
+        <a href="resort.html">Resort</a>
+        <a href="guest.html">Guest House</a>
+        <a href="flights.html">Flights</a>
+        <!--<a href="journey.html">Flight + Hotel</a>-->
+        <a href="vehicle.html">Vehicles</a>
+        <a href="places.html">Famous Places</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="register.html" class="btn-auth">Register</a>
+      <a href="login.html" class="btn-auth">Login</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="vehicle-hero">
+    <h1>Rent Your Vehicle</h1>
+    <p>Choose from cars, bikes, and taxis at affordable prices.</p>
+  </section>
+
+  <!-- Vehicle Rental Section -->
+  <section class="vehicle-list">
+    <h2>🚗 Vehicle Options</h2>
+    <div class="card">
+      <img src="images/car1.jpg" alt="Luxury Car">
+      <h3>Luxury Car</h3>
+      <p>Price: ₹5000/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+    <div class="card">
+      <img src="images/car2.jpg" alt="SUV">
+      <h3>SUV</h3>
+      <p>Price: ₹3500/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+    <div class="card">
+      <img src="images/bike1.jpg" alt="Bike">
+      <h3>Bike</h3>
+      <p>Price: ₹1200/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+  </section>
+
+  <!-- Taxi Booking Section -->
+  <section class="taxi-list" id="taxi">
+    <h2>🚖 Taxi Booking</h2>
+    <div class="card">
+      <img src="images/taxi1.jpg" alt="Standard Taxi">
+      <h3>Standard Taxi</h3>
+      <p>Price: ₹20/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+
+    <div class="card">
+      <img src="images/taxi2.jpg" alt="Premium Taxi">
+      <h3>Premium Taxi</h3>
+      <p>Price: ₹40/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+
+    <div class="card">
+      <img src="images/taxi3.jpg" alt="Electric Taxi">
+      <h3>Eco-friendly Taxi</h3>
+      <p>Price: ₹25/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    document.querySelectorAll(".rent-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Vehicle rental booking coming soon!");
+      });
+    });
+
+    document.querySelectorAll(".book-taxi").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Taxi booking feature coming soon!");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Roomora - Search</title>
+  <link rel="stylesheet" href="searchbox.css">
+</head>
+<body>
+
+  <!-- Search Box -->
+  <section class="search-box">
+    <select id="destination">
+  <option value="">-- Select a city --</option>
+  <option value="Mumbai">Mumbai</option>
+  <option value="Delhi">Delhi</option>
+  <option value="Goa">Goa</option>
+  <option value="Bangalore">Bangalore</option>
+  <option value="Chennai">Chennai</option>
+  <option value="Kolkata">Kolkata</option>
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="Jaipur">Jaipur</option>
+  <option value="Agra">Agra</option>
+  <option value="Kerala">Kerala</option>
+  <option value="Shimla">Shimla</option>
+  <option value="Ooty">Ooty</option>
+  <option value="Manali">Manali</option>
+  <option value="Maldives">Maldives</option>
+  <option value="Dubai">Dubai</option>
+  <option value="Singapore">Singapore</option>
+  <option value="London">London</option>
+  <option value="New York">New York</option>
+  <option value="Paris">Paris</option>
+  <option value="Tokyo">Tokyo</option>
+</select>
+
+    <input type="date" id="checkin">
+    <input type="date" id="checkout">
+    <input type="text" id="guests" placeholder="2 persons · 1 room">
+    <button id="searchBtn">Search</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      let destination = document.getElementById("destination").value;
+      let checkin = document.getElementById("checkin").value;
+      let checkout = document.getElementById("checkout").value;
+      let guests = document.getElementById("guests").value;
+
+      if (destination.trim() === "") {
+        alert("Please enter a destination!");
+        return;
+      }
+
+      alert(
+        `Searching hotels in ${destination}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}`
+      );
+    });
+  </script>
+
+</body>
+</html>

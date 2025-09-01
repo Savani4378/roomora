@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title> Roomora.com | Book Your Stay</title>
+  <link rel="stylesheet" href="/home/style.css">
+</head>
+
+<body>
+
+    <!--Title Bar-->
+    <script src="javascript.js"></script>
+    <header class="navbar">
+      <div class="logo">Roomora<span>.com</span></div>
+      <nav class="menu">
+        <a href="/home/main.html">Home</a>
+        <a href="/hotel/hotel.html">Hotel</a>
+        <a href="/resort/resort.html">Resort</a>
+        <a href="/guest/guest.html">Guest House</a>
+        <a href="/flights/flights.html">Flights</a>
+        <!--<a href="journey.html">Flight + Hotel</a>-->
+        <a href="/vehicle/vehicle.html">Vehicles</a>
+        <a href="/places/places.html">Famous Places</a>
+       
+      </nav>
+      
+
+<div class="flag-dropdown">
+  <div class="flag-btn" class="flag-dropdown-btn" id="selected">
+    <img src="/images/us.png">
+  </div>
+  <div class="flag-dropdown-list" id="flag-dropdown-list">
+    <div><img src="https://flagcdn.com/w20/in.png" alt="India"> India (INR)</div>
+    <div><img src="https://flagcdn.com/w20/us.png" alt="USA"> USA (USD)</div>
+    <div><img src="https://flagcdn.com/w20/gb.png" alt="UK"> UK (GBP)</div>
+    <div><img src="https://flagcdn.com/w20/eu.png" alt="EU"> Eurozone (EUR)</div>
+    <div><img src="https://flagcdn.com/w20/jp.png" alt="Japan"> Japan (JPY)</div>
+    <div><img src="https://flagcdn.com/w20/ca.png" alt="Canada"> Canada (CAD)</div>
+    <div><img src="https://flagcdn.com/w20/au.png" alt="Australia"> Australia (AUD)</div>
+    <div><img src="https://flagcdn.com/w20/ch.png" alt="Switzerland"> Switzerland (CHF)</div>
+    <div><img src="https://flagcdn.com/w20/cn.png" alt="China"> China (CNY)</div>
+    <div><img src="https://flagcdn.com/w20/sg.png" alt="Singapore"> Singapore (SGD)</div>
+    <div><img src="https://flagcdn.com/w20/nz.png" alt="New Zealand"> New Zealand (NZD)</div>
+    <div><img src="https://flagcdn.com/w20/za.png" alt="South Africa"> South Africa (ZAR)</div>
+    <div><img src="https://flagcdn.com/w20/br.png" alt="Brazil"> Brazil (BRL)</div>
+    <div><img src="https://flagcdn.com/w20/ru.png" alt="Russia"> Russia (RUB)</div>
+    <div><img src="https://flagcdn.com/w20/kr.png" alt="South Korea"> South Korea (KRW)</div>
+    <div><img src="https://flagcdn.com/w20/mx.png" alt="Mexico"> Mexico (MXN)</div>
+    <div><img src="https://flagcdn.com/w20/ar.png" alt="Argentina"> Argentina (ARS)</div>
+    <div><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia"> Saudi Arabia (SAR)</div>
+    <div><img src="https://flagcdn.com/w20/ae.png" alt="UAE"> UAE (AED)</div>
+    <div><img src="https://flagcdn.com/w20/tr.png" alt="Turkey"> Turkey (TRY)</div>
+    <div><img src="https://flagcdn.com/w20/se.png" alt="Sweden"> Sweden (SEK)</div>
+    <div><img src="https://flagcdn.com/w20/no.png" alt="Norway"> Norway (NOK)</div>
+    <div><img src="https://flagcdn.com/w20/dk.png" alt="Denmark"> Denmark (DKK)</div>
+    <div><img src="https://flagcdn.com/w20/pl.png" alt="Poland"> Poland (PLN)</div>
+    <div><img src="https://flagcdn.com/w20/hk.png" alt="Hong Kong"> Hong Kong (HKD)</div>
+    <div><img src="https://flagcdn.com/w20/th.png" alt="Thailand"> Thailand (THB)</div>
+    <div><img src="https://flagcdn.com/w20/my.png" alt="Malaysia"> Malaysia (MYR)</div>
+    <div><img src="https://flagcdn.com/w20/ng.png" alt="Nigeria"> Nigeria (NGN)</div>
+    <div><img src="https://flagcdn.com/w20/eg.png" alt="Egypt"> Egypt (EGP)</div>
+    <div><img src="https://flagcdn.com/w20/id.png" alt="Indonesia"> Indonesia (IDR)</div>
+  </div>
+</div>
+    <nav>
+      
+  <ul>
+    <div class="auth-buttons">
+      <!-- Profile Icon -->
+      <div class="profile-dropdown">
+        <img src="/images/I1.jpeg" 
+             alt="Profile Icon" class="profile-icon">
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown-content">
+          <a href="/register/register.html">Register</a>
+          <a href="/register/login.html">Login</a>
+        </div>
+      </div>
+    </div>
+  </ul>
+</nav>  
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-text">
+
+       <div class="background-swipe">
+          <div class="content">
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box">
+
+        <select id="destination">
+  <option value="">-- Select a city --</option>
+  <option value="Mumbai">Mumbai</option>
+  <option value="Delhi">Delhi</option>
+  <option value="Goa">Goa</option>
+  <option value="Bangalore">Bangalore</option>
+  <option value="Chennai">Chennai</option>
+  <option value="Kolkata">Kolkata</option>
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="Jaipur">Jaipur</option>
+  <option value="Agra">Agra</option>
+  <option value="Kerala">Kerala</option>
+  <option value="Shimla">Shimla</option>
+  <option value="Ooty">Ooty</option>
+  <option value="Manali">Manali</option>
+  <option value="Maldives">Maldives</option>
+  <option value="Dubai">Dubai</option>
+  <option value="Singapore">Singapore</option>
+  <option value="London">London</option>
+  <option value="New York">New York</option>
+  <option value="Paris">Paris</option>
+  <option value="Tokyo">Tokyo</option>
+</select>
+
+        <input type="date" id="checkin">
+        <input type="date" id="checkout">
+
+<!-- Combined Guests + Rooms Box -->
+<div class="guests-box">
+  <input type="text" id="guestsInput" placeholder="2 persons · 1 room" readonly>
+
+  <div class="dropdown" id="guestsDropdown" style="display:none;">
+    <label>
+      Persons:
+      <input type="number" id="persons" name="Persons" min="1" max="10" value="2">
+    </label>
+    <br>
+    <label>
+      Rooms:
+      <input type="number" id="rooms" nam="Rooms" min="1" max="5" value="1">
+    </label>
+    <br>
+    <button id="applyGuests">Apply</button>
+  </div>
+</div>
+
+
+        <!--<input type="text" id="guests" placeholder="2 person · 1 room">-->
+        <button id="searchBtn">Search</button>
+
+
+        <script>
+          function search() {
+            let place = document.getElementById("searchBox").value;
+            alert("Searching hotels in " + place);
+          }
+        </script>
+
+      </div>
+
+      
+    </section>
+
+    <section class="rooms">
+      <h2> select your favorite room</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-28 120807.png" alt="type1" />
+          <h3>your luxury</h3>
+          <p class="location">Taj,Mumbai</p>
+          <p class="rating">⭐ 8.7 · Fabulous · 11,064 reviews</p>
+          <p class="price">Starting from ₹ 50,231</p>
+
+          <button class="booknow">Book Now</button>
+
+
+
+
+        </div>
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-28 120538.png" alt="type2" />
+          <h3>your peace sleep</h3>
+          <p class="location">Goa,India</p>
+          <p class="rating">⭐ 8.8 · Fabulous · 595 reviews</p>
+          <p class="price">Starting from ₹ 22,202</p>
+
+          <button class="bookNow">Book Now</button>
+
+
+
+        </div>
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-28 120645.png" alt="type3" />
+          <h3>For better need</h3>
+          <p class="location">New-Delhi</p>
+          <p class="rating">⭐ 7.0 · Fabulous · 595 reviews</p>
+          <p class="price">Starting from ₹ 10,202</p>
+
+          <button class="bookNow">Book Now</button>
+
+
+
+        </div>
+      </div>
+    </section>
+    <section class="food">
+      <h3>Food Area</h3>
+      <div class="card-container">
+
+        <!-- Card 1 -->
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-30 154820.png" alt="Taj mumbai">
+          <h3>clear & healthy</h3>
+          <p class="location">Taj mumbai</p>
+          <p class="rating">⭐10.0</p>
+
+          <button class="bookNow">Book Now</button>
+          <script>
+
+            document.getElementById("bookNow").addEventListener("click", () => {
+              alert("Booking feature coming soon!");
+            });
+          </script>
+
+
+
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-30 155359.png" alt="Goa">
+          <h3>food with views</h3>
+          <p class="location">Goa, India</p>
+          <p class="rating">⭐10.0</p>
+
+          <button class="bookNow">Book Now</button>
+
+
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <img src="C:\Users\solan\Pictures\Screenshots\Screenshot 2025-07-30 155728.png" alt="Delhi">
+          <h3>traditional</h3>
+          <p class="location">Delhi, India</p>
+          <p class="rating">⭐9.0</p>
+
+          <button class="book-now">Book Now</button>
+
+
+
+        </div>
+
+      </div>
+    </section>
+    </section>
+
+    
+        <footer>
+<!--searchbox-->
+          <script>
+    let destination = document.getElementById("destination").value;
+
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      let destination = document.getElementById("destination").value;
+      let checkin = document.getElementById("checkin").value;
+      let checkout = document.getElementById("checkout").value;
+      let guests = document.getElementById("guests").value;
+
+      if (destination.trim() === "") {
+        alert("Please enter a destination!");
+        return;
+      }
+
+      alert(
+        `Searching hotels in ${destination}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}`
+      );
+    });
+    const guestsInput = document.getElementById("guestsInput");
+const guestsDropdown = document.getElementById("guestsDropdown");
+const persons = document.getElementById("persons");
+const rooms = document.getElementById("rooms");
+const applyGuests = document.getElementById("applyGuests");
+
+// Toggle dropdown on click
+guestsInput.addEventListener("click", () => {
+  guestsDropdown.style.display = 
+    guestsDropdown.style.display === "none" ? "block" : "none";
+});
+
+// Apply button updates the input
+applyGuests.addEventListener("click", () => {
+  guestsInput.value = `${persons.value} persons · ${rooms.value} rooms`;
+  guestsDropdown.style.display = "none";
+});
+
+  </script>
+<script>
+  const btn = document.getElementById("selected");
+  const list = document.getElementById("flag-dropdown-list");
+
+  btn.addEventListener("click", () => {
+    list.style.display = list.style.display === "block" ? "none" : "block";
+  });
+
+  list.querySelectorAll("div").forEach(item => {
+    item.addEventListener("click", () => {
+      btn.innerHTML = item.innerHTML;
+      list.style.display = "none";
+    });
+  });
+
+  // close dropdown if clicked outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".flag-dropdown")) {
+      list.style.display = "none";
+    }
+  });
+</script>
+      <div class="top-links">
+        <a href="#">Countries</a> · <a href="#">Regions</a> · <a href="#">Cities</a> · <a href="#">Districts</a> · <a
+          href="#">Airports</a> ·
+        <a href="#">Hotels</a> · <a href="#">Places of interest</a> · <a href="#">Holiday Homes</a> · <a
+          href="#">Apartments</a> ·
+        <a href="#">Resorts</a> · <a href="#">Villas</a> · <a href="#">Hostels</a> · <a href="#">B&amp;Bs</a> ·
+        <a href="#">Guest Houses</a> · <a href="#">Unique places to stay</a> · <a href="#">All destinations</a> ·
+        <a href="#">All flight destinations</a> · <a href="#">All car hire locations</a> ·
+        <a href="#">All holiday destinations</a> · <a href="#">Guides</a> · <a href="#">Discover</a> ·
+        <a href="#">Reviews</a> · <a href="#">Discover monthly stays</a>
+      </div>
+
+      <div class="footer-columns">
+        <div>
+          <h4>Support</h4>
+          <a href="#">Coronavirus (COVID-19) FAQs</a>
+          <a href="#">Manage your trips</a>
+          <a href="#">Contact Customer Service</a>
+          <a href="#">Safety resource centre</a>
+        </div>
+
+        <div>
+          <h4>Discover</h4>
+          <a href="#">Genius loyalty programme</a>
+          <a href="#">Seasonal and holiday deals</a>
+          <a href="#">Travel articles</a>
+          <a href="#">Booking.com for Business</a>
+          <a href="#">Traveller Review Awards</a>
+          <a href="#">Car hire</a>
+          <a href="#">Flight finder</a>
+          <a href="#">Restaurant reservations</a>
+          <a href="#">Booking.com for Travel Agents</a>
+        </div>
+
+        <div>
+          <h4>Terms and settings</h4>
+          <a href="#">Privacy &amp; cookies</a>
+          <a href="#">Terms and conditions</a>
+          <a href="#">Accessibility Statement</a>
+          <a href="#">Grievance officer</a>
+          <a href="#">Modern Slavery Statement</a>
+          <a href="#">Human Rights Statement</a>
+        </div>
+
+        <div>
+          <h4>Partners</h4>
+          <a href="#">Extranet login</a>
+          <a href="#">Partner help</a>
+          <a href="#">List your property</a>
+          <a href="#">Become an affiliate</a>
+        </div>
+
+        <div>
+          <h4>About</h4>
+          <a href="#">About Booking.com</a>
+          <a href="#">How we work</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Press centre</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor relations</a>
+          <a href="#">Corporate contact</a>
+        </div>
+      </div>
+
+      <div class="currency">
+        <img src="https://flagcdn.com/w20/in.png" alt="India Flag"> INR
+      </div>
+
+      <div class="bottom-text">
+        <p>Hotel.com is part of Booking Holdings Inc., the world leader in online travel and related services.</p>
+        <p>&copy; 1996–2025 Booking.com™. All rights reserved.</p>
+        <div class="brands">
+          <img src="" alt="Hotel.com">
+          <span>priceline</span>
+          <span>KAYAK</span>
+          <span>agoda</span>
+          <span>OpenTable</span>
+        </div>
+      </div>
+    </footer>
+
+</body>
+
+</html>
