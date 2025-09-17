@@ -13,19 +13,28 @@
   <header class="navbar">
     <div class="logo">Roomora<span>.com</span></div>
     <nav class="menu">
-      <a href="main.html">Home</a>
-      <a href="hotel.html">Hotel</a>
-        <a href="resort.html">Resort</a>
-        <a href="guest.html">Guest House</a>
-        <a href="flights.html">Flights</a>
-        <!--<a href="journey.html">Flight + Hotel</a>-->
-        <a href="vehicle.html">Vehicles</a>
-        <a href="places.html">Famous Places</a>
+      <a href="/home/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
     </nav>
-    <div class="auth-buttons">
-      <a href="register.html" class="btn-auth">Register</a>
-      <a href="login.html" class="btn-auth">Login</a>
-    </div>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero Section -->
@@ -34,528 +43,102 @@
     <p>Discover breathtaking destinations around the world.</p>
   </section>
 
-  <!-- Places Grid: 8 Cities, 10 Places Each -->
-<section class="places-list">
+  <!-- Places Section -->
+  <section class="places-list">
+    <div id="placesContainer">
+      <!-- Places will be dynamically generated here -->
+    </div>
+  </section>
 
-  <!-- Delhi -->
-  <h2>Delhi</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/delhi/india_gate.jpg" alt="India Gate">
-      <h3>India Gate</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/red_fort.jpg" alt="Red Fort">
-      <h3>Red Fort</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/qutub_minar.jpg" alt="Qutub Minar">
-      <h3>Qutub Minar</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/lotus_temple.jpg" alt="Lotus Temple">
-      <h3>Lotus Temple</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/jama_masjid.jpg" alt="Jama Masjid">
-      <h3>Jama Masjid</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/humayuns_tomb.jpg" alt="Humayun's Tomb">
-      <h3>Humayun's Tomb</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/raj_ghat.jpg" alt="Raj Ghat">
-      <h3>Raj Ghat</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/chandni_chowk.jpg" alt="Chandni Chowk">
-      <h3>Chandni Chowk</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/lotus_fountain.jpg" alt="Garden of Five Senses">
-      <h3>Garden of Five Senses</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/delhi/palika_bazaar.jpg" alt="Palika Bazaar">
-      <h3>Palika Bazaar</h3>
-      <p>Delhi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
 
-  <!-- Jaipur -->
-  <h2>Jaipur</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/jaipur/hawa_mahal.jpg" alt="Hawa Mahal">
-      <h3>Hawa Mahal</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/amber_fort.jpg" alt="Amber Fort">
-      <h3>Amber Fort</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/jantar_mantar.jpg" alt="Jantar Mantar">
-      <h3>Jantar Mantar</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/siti_fort.jpg" alt="City Palace">
-      <h3>City Palace</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/jal_mahal.jpg" alt="Jal Mahal">
-      <h3>Jal Mahal</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/nahargarh_fort.jpg" alt="Nahargarh Fort">
-      <h3>Nahargarh Fort</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/birla_temple.jpg" alt="Birla Mandir">
-      <h3>Birla Mandir</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/galta_ji.jpg" alt="Galta Ji">
-      <h3>Galta Ji</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/central_museum.jpg" alt="Albert Hall Museum">
-      <h3>Albert Hall Museum</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/jaipur/ram_niwas_garden.jpg" alt="Ram Niwas Garden">
-      <h3>Ram Niwas Garden</h3>
-      <p>Jaipur</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+  <!-- Script -->
+  <script>
+const places = [
+  // Delhi
+  {city: "Delhi", name: "India Gate", img: "https://wallpaperaccess.com/full/4455652.jpg"},
+  {city: "Delhi", name: "Red Fort", img: "https://wallpapercave.com/wp/wp10702801.jpg"},
+  {city: "Delhi", name: "Qutub Minar", img: "https://ichef.bbci.co.uk/news/976/cpsprodpb/143BF/production/_124897828_gettyimages-541363304-170667a.jpg"},
+  {city: "Delhi", name: "Lotus Temple", img: "https://assets.hongkiat.com/uploads/beautiful-india-photography/the-lotus-temple.jpg"},
+  {city: "Delhi", name: "Jama Masjid", img: "https://www.agrashivtourandtravels.com/wp-content/uploads/2020/06/jama-1024x683.jpg"},
+  {city: "Delhi", name: "Humayun's Tomb", img: "https://wallpaperaccess.com/full/9355029.jpg"},
+  {city: "Delhi", name: "Raj Ghat", img: "images/india/delhi/raj_ghat.jpg"},
+  {city: "Delhi", name: "Chandni Chowk", img: "images/india/delhi/chandni_chowk.jpg"},
+  {city: "Delhi", name: "Garden of Five Senses", img: "images/india/delhi/lotus_fountain.jpg"},
+  {city: "Delhi", name: "Palika Bazaar", img: "images/india/delhi/palika_bazaar.jpg"},
 
-  <!-- Agra -->
-  <h2>Agra</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/agra/taj_mahal.jpg" alt="Taj Mahal">
-      <h3>Taj Mahal</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/agra_fort.jpg" alt="Agra Fort">
-      <h3>Agra Fort</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/fatehpur_sikri.jpg" alt="Fatehpur Sikri">
-      <h3>Fatehpur Sikri</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/itz_kahna.jpg" alt="Itmad-ud-Daulah">
-      <h3>Itmad-ud-Daulah</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/mehtab_bagh.jpg" alt="Mehtab Bagh">
-      <h3>Mehtab Bagh</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/akbar_tomb.jpg" alt="Akbar's Tomb">
-      <h3>Akbar's Tomb</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/jama_masjid_agra.jpg" alt="Jama Masjid Agra">
-      <h3>Jama Masjid</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/mariam_tomb.jpg" alt="Mariam's Tomb">
-      <h3>Mariam's Tomb</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/sikandra_fort.jpg" alt="Sikandra Fort">
-      <h3>Sikandra Fort</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/agra/ram_bagh.jpg" alt="Ram Bagh">
-      <h3>Ram Bagh</h3>
-      <p>Agra</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+  // Jaipur
+  {city: "Jaipur", name: "Hawa Mahal", img: "images/india/jaipur/hawa_mahal.jpg"},
+  {city: "Jaipur", name: "Amber Fort", img: "images/india/jaipur/amber_fort.jpg"},
+  {city: "Jaipur", name: "Jantar Mantar", img: "images/india/jaipur/jantar_mantar.jpg"},
+  {city: "Jaipur", name: "City Palace", img: "images/india/jaipur/siti_fort.jpg"},
+  {city: "Jaipur", name: "Jal Mahal", img: "images/india/jaipur/jal_mahal.jpg"},
+  {city: "Jaipur", name: "Nahargarh Fort", img: "images/india/jaipur/nahargarh_fort.jpg"},
+  {city: "Jaipur", name: "Birla Mandir", img: "images/india/jaipur/birla_temple.jpg"},
+  {city: "Jaipur", name: "Galta Ji", img: "images/india/jaipur/galta_ji.jpg"},
+  {city: "Jaipur", name: "Albert Hall Museum", img: "images/india/jaipur/central_museum.jpg"},
+  {city: "Jaipur", name: "Ram Niwas Garden", img: "images/india/jaipur/ram_niwas_garden.jpg"},
 
-  <!-- Varanasi -->
-  <h2>Varanasi</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/varanasi/kashi_vishwanath.jpg" alt="Kashi Vishwanath">
-      <h3>Kashi Vishwanath Temple</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/assighat.jpg" alt="Assi Ghat">
-      <h3>Assi Ghat</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/durga_temple.jpg" alt="Durga Temple">
-      <h3>Durga Temple</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/banaras_hindustani.jpg" alt="Banaras Hindu University">
-      <h3>Banaras Hindu University</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/manikarnika_ghat.jpg" alt="Manikarnika Ghat">
-      <h3>Manikarnika Ghat</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/dashashwamedh_ghat.jpg" alt="Dashashwamedh Ghat">
-      <h3>Dashashwamedh Ghat</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/sarnath.jpg" alt="Sarnath">
-      <h3>Sarnath</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/ghat_road.jpg" alt="Ghat Road">
-      <h3>Ghat Road</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/harishchandra_ghat.jpg" alt="Harishchandra Ghat">
-      <h3>Harishchandra Ghat</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/varanasi/rajendrapur_ghat.jpg" alt="Rajendrapur Ghat">
-      <h3>Rajendrapur Ghat</h3>
-      <p>Varanasi</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+  // Agra
+  {city: "Agra", name: "Taj Mahal", img: "images/india/agra/taj_mahal.jpg"},
+  {city: "Agra", name: "Agra Fort", img: "images/india/agra/agra_fort.jpg"},
+  {city: "Agra", name: "Fatehpur Sikri", img: "images/india/agra/fatehpur_sikri.jpg"},
+  {city: "Agra", name: "Itmad-ud-Daulah", img: "images/india/agra/itz_kahna.jpg"},
+  {city: "Agra", name: "Mehtab Bagh", img: "images/india/agra/mehtab_bagh.jpg"},
+  {city: "Agra", name: "Akbar's Tomb", img: "images/india/agra/akbar_tomb.jpg"},
+  {city: "Agra", name: "Jama Masjid", img: "images/india/agra/jama_masjid_agra.jpg"},
+  {city: "Agra", name: "Mariam's Tomb", img: "images/india/agra/mariam_tomb.jpg"},
+  {city: "Agra", name: "Sikandra Fort", img: "images/india/agra/sikandra_fort.jpg"},
+  {city: "Agra", name: "Ram Bagh", img: "images/india/agra/ram_bagh.jpg"},
 
-    <!-- Mumbai -->
-  <h2>Mumbai</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/mumbai/gateway_of_india.jpg" alt="Gateway of India">
-      <h3>Gateway of India</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/chhatrapati_shivaji_terminus.jpg" alt="Chhatrapati Shivaji Terminus">
-      <h3>Chhatrapati Shivaji Terminus</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/marine_drive.jpg" alt="Marine Drive">
-      <h3>Marine Drive</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/juhu_beach.jpg" alt="Juhu Beach">
-      <h3>Juhu Beach</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/sanjay_gandhi_national_park.jpg" alt="Sanjay Gandhi National Park">
-      <h3>Sanjay Gandhi National Park</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/haji_ali_dargah.jpg" alt="Haji Ali Dargah">
-      <h3>Haji Ali Dargah</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/siddhivinayak_temple.jpg" alt="Siddhivinayak Temple">
-      <h3>Siddhivinayak Temple</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/bandra_worli_sea_link.jpg" alt="Bandra-Worli Sea Link">
-      <h3>Bandra-Worli Sea Link</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/elephanta_caves.jpg" alt="Elephanta Caves">
-      <h3>Elephanta Caves</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/mumbai/colaba_causeway.jpg" alt="Colaba Causeway">
-      <h3>Colaba Causeway</h3>
-      <p>Mumbai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+  // (Continue the same for Varanasi, Mumbai, Kolkata, Chennai, Bangalore)
+];
 
-  <!-- Kolkata -->
-  <h2>Kolkata</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/kolkata/victoria_memorial.jpg" alt="Victoria Memorial">
-      <h3>Victoria Memorial</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/howrah_bridge.jpg" alt="Howrah Bridge">
-      <h3>Howrah Bridge</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/indians_museum.jpg" alt="Indian Museum">
-      <h3>Indian Museum</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/dakshineswar_kali_temple.jpg" alt="Dakshineswar Kali Temple">
-      <h3>Dakshineswar Kali Temple</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/sanctorium.jpg" alt="Birla Planetarium">
-      <h3>Birla Planetarium</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/marble_palace.jpg" alt="Marble Palace">
-      <h3>Marble Palace</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/st_paul_cathedral.jpg" alt="St. Paul's Cathedral">
-      <h3>St. Paul's Cathedral</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/park_street.jpg" alt="Park Street">
-      <h3>Park Street</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/eco_park.jpg" alt="Eco Park">
-      <h3>Eco Park</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/kolkata/ali_katra.jpg" alt="Ali Katra">
-      <h3>Ali Katra</h3>
-      <p>Kolkata</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+// Group by city
+const groupedPlaces = places.reduce((acc, place) => {
+  if (!acc[place.city]) acc[place.city] = [];
+  acc[place.city].push(place);
+  return acc;
+}, {});
 
-  <!-- Chennai -->
-  <h2>Chennai</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/chennai/marina_beach.jpg" alt="Marina Beach">
-      <h3>Marina Beach</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/capitol_theatre.jpg" alt="Kapaleeshwarar Temple">
-      <h3>Kapaleeshwarar Temple</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/san_thome_cathedral.jpg" alt="San Thome Cathedral">
-      <h3>San Thome Cathedral</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/fort_st_george.jpg" alt="Fort St. George">
-      <h3>Fort St. George</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/museums.jpg" alt="Government Museum">
-      <h3>Government Museum</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/guindy_national_park.jpg" alt="Guindy National Park">
-      <h3>Guindy National Park</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/elliots_beach.jpg" alt="Elliot's Beach">
-      <h3>Elliot's Beach</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/ashok_nagar.jpg" alt="Valluvar Kottam">
-      <h3>Valluvar Kottam</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/lighthouse.jpg" alt="Chennai Lighthouse">
-      <h3>Chennai Lighthouse</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/chennai/vedas_museum.jpg" alt="Vedas Museum">
-      <h3>Vedas Museum</h3>
-      <p>Chennai</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
+const container = document.getElementById("placesContainer");
 
-  <!-- Bangalore -->
-  <h2>Bangalore</h2>
-  <div class="city-section">
-    <div class="card">
-      <img src="images/india/bangalore/lalbagh.jpg" alt="Lalbagh Botanical Garden">
-      <h3>Lalbagh Botanical Garden</h3>
-      <p>Bangalore</p>
+// Generate HTML per city
+for (const city in groupedPlaces) {
+  const cityTitle = document.createElement("h2");
+  cityTitle.textContent = city;
+  cityTitle.style.color = "#004aad";
+  cityTitle.style.margin = "30px 0 15px 0";
+  container.appendChild(cityTitle);
+
+  const cityContainer = document.createElement("div");
+  cityContainer.classList.add("city-section");
+
+  groupedPlaces[city].forEach(place => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${place.img}" alt="${place.name}" loading="lazy">
+      <h3>${place.name}</h3>
+      <p>${place.city}</p>
       <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/bangalore_palace.jpg" alt="Bangalore Palace">
-      <h3>Bangalore Palace</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/vidhana_soudha.jpg" alt="Vidhana Soudha">
-      <h3>Vidhana Soudha</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/cubbon_park.jpg" alt="Cubbon Park">
-      <h3>Cubbon Park</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/isckon_temple.jpg" alt="ISKCON Temple">
-      <h3>ISKCON Temple</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/bannerghatta_national_park.jpg" alt="Bannerghatta National Park">
-      <h3>Bannerghatta National Park</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/nandi_hills.jpg" alt="Nandi Hills">
-      <h3>Nandi Hills</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/ulsoor_lake.jpg" alt="Ulsoor Lake">
-      <h3>Ulsoor Lake</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/kanteerava_stadium.jpg" alt="Kanteerava Stadium">
-      <h3>Kanteerava Stadium</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-    <div class="card">
-      <img src="images/india/bangalore/jp_nagar.jpg" alt="JP Nagar Market">
-      <h3>JP Nagar Market</h3>
-      <p>Bangalore</p>
-      <button class="explore-btn">Explore</button>
-    </div>
-  </div>
-</section>
+    `;
+    cityContainer.appendChild(card);
+  });
+
+  container.appendChild(cityContainer);
+}
+
+// Explore button click
+document.querySelectorAll(".explore-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Exploration details coming soon!");
+  });
+});
+  </script>
+
 </body>
 </html>

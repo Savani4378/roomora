@@ -11,8 +11,10 @@
     .hotel-form, .hotel-list { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .hotel-form input, .hotel-form select { display: block; width: 100%; margin: 10px 0; padding: 8px; }
     .hotel-form button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
-    .hotel-card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
-    .hotel-card button { margin-left: 5px; cursor: pointer; }
+    .hotel-card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; gap: 15px; }
+    .hotel-card img { width: 100px; height: 80px; object-fit: cover; border-radius: 5px; }
+    .hotel-info { flex: 1; }
+    .hotel-actions button { margin-left: 5px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -27,7 +29,10 @@
     <input type="text" id="hotel-state" placeholder="State">
     <input type="text" id="hotel-price" placeholder="Price per night (₹)">
     <input type="text" id="hotel-type" placeholder="Type (Luxury, Business, etc.)">
-    <input type="text" id="hotel-image" placeholder="Image URL">
+
+    <!-- Changed: Image upload input -->
+    <input type="file" id="hotel-image" accept="image/jpeg,image/png">
+
     <button id="submit-hotel">Add Hotel</button>
   </div>
 
@@ -38,16 +43,33 @@
   </div>
 
   <script>
-    let hotels = [
-      { name: "Taj Mumbai", city: "Mumbai", state: "Maharashtra", price: 4500, type: "Luxury", image: "images/mumbai1.png" },
-      { name: "JW Marriott Juhu", city: "Mumbai", state: "Maharashtra", price: 7200, type: "Luxury", image: "images/mumbai2.png" }
-    ];
-
+    let hotels = [];
     let editIndex = null;
+    let uploadedImage = null; // stores Base64 of uploaded image
 
     const hotelCards = document.getElementById('hotel-cards');
     const submitBtn = document.getElementById('submit-hotel');
     const formTitle = document.getElementById('form-title');
+    const imageInput = document.getElementById('hotel-image');
+
+    // Handle image upload
+    imageInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+        if (!validTypes.includes(file.type)) {
+          alert("Only JPG, JPEG, and PNG formats are allowed.");
+          this.value = "";
+          uploadedImage = null;
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          uploadedImage = e.target.result; // store Base64 string
+        }
+        reader.readAsDataURL(file);
+      }
+    });
 
     function renderHotels() {
       hotelCards.innerHTML = '';
@@ -55,11 +77,16 @@
         const div = document.createElement('div');
         div.className = 'hotel-card';
         div.innerHTML = `
-          <span><strong>${hotel.name}</strong> (${hotel.city}, ${hotel.state}) - ₹${hotel.price}/night [${hotel.type}]</span>
-          <span>
+          <img src="${hotel.image}" alt="${hotel.name}">
+          <div class="hotel-info">
+            <strong>${hotel.name}</strong><br>
+            ${hotel.city}, ${hotel.state}<br>
+            ₹${hotel.price}/night [${hotel.type}]
+          </div>
+          <div class="hotel-actions">
             <button onclick="editHotel(${index})">Edit</button>
             <button onclick="deleteHotel(${index})">Delete</button>
-          </span>
+          </div>
         `;
         hotelCards.appendChild(div);
       });
@@ -72,6 +99,7 @@
       document.getElementById('hotel-price').value = '';
       document.getElementById('hotel-type').value = '';
       document.getElementById('hotel-image').value = '';
+      uploadedImage = null;
       editIndex = null;
       formTitle.textContent = "Add New Hotel";
       submitBtn.textContent = "Add Hotel";
@@ -83,14 +111,13 @@
       const state = document.getElementById('hotel-state').value;
       const price = parseInt(document.getElementById('hotel-price').value);
       const type = document.getElementById('hotel-type').value;
-      const image = document.getElementById('hotel-image').value;
 
-      if (!name || !city || !state || !price || !type || !image) {
-        alert("Please fill all fields");
+      if (!name || !city || !state || !price || !type || !uploadedImage) {
+        alert("Please fill all fields and upload an image.");
         return;
       }
 
-      const hotelData = { name, city, state, price, type, image };
+      const hotelData = { name, city, state, price, type, image: uploadedImage };
 
       if (editIndex !== null) {
         hotels[editIndex] = hotelData;
@@ -109,7 +136,10 @@
       document.getElementById('hotel-state').value = hotel.state;
       document.getElementById('hotel-price').value = hotel.price;
       document.getElementById('hotel-type').value = hotel.type;
-      document.getElementById('hotel-image').value = hotel.image;
+
+      // image file input cannot be pre-filled, so keep old image unless replaced
+      uploadedImage = hotel.image;
+
       editIndex = index;
       formTitle.textContent = "Edit Hotel";
       submitBtn.textContent = "Update Hotel";
@@ -121,8 +151,6 @@
         renderHotels();
       }
     }
-
-    renderHotels();
   </script>
 
 </body>

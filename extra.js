@@ -1,83 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpeg" href="logo.webp">
-  <title>Roomora | Hotel Booking</title>
-  <link rel="stylesheet" href="hotel.css">
-</head>
-<body>
+<script>
+async function loadHotels() {
+  try {
+    const response = await fetch("/api/hotels"); // API endpoint from backend
+    const hotels = await response.json();
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Roomora<span>.com</span></div>
-    <nav class="menu">
-      <a href="/home/index.html">Home</a>
-      <a href="/hotel/hotel.html">Hotel</a>
-      <a href="/resort/resort.html">Resort</a>
-      <a href="/guest/guest.html">Guest House</a>
-      <a href="/flights/flights.html">Flights</a>
-      <a href="/vehicle/vehicle.html">Vehicles</a>
-      <a href="/places/places.html">Famous Places</a>
-    </nav>
+    const container = document.getElementById("hotelContainer");
 
-    <nav>
-      <ul>
-        <div class="auth-buttons">
-          <!-- Profile Icon -->
-          <div class="profile-dropdown">
-            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
-            <div class="dropdown-content">
-              <a href="/register/register.html">Register</a>
-              <a href="/register/login.html">Login</a>
-            </div>
-          </div>
-        </div>
-      </ul>
-    </nav>
-  </header>
+    // Group by city
+    const groupedHotels = hotels.reduce((acc, hotel) => {
+      if (!acc[hotel.city]) acc[hotel.city] = [];
+      acc[hotel.city].push(hotel);
+      return acc;
+    }, {});
 
-  <!-- Hero Section -->
-  <section class="hotel-hero">
-    <h1>Book Best Hotels</h1>
-    <p>Find affordable and luxurious hotels in top cities.</p>
-  </section>
+    for (const city in groupedHotels) {
+      const cityTitle = document.createElement("h3");
+      cityTitle.textContent = city;
+      cityTitle.style.color = "#004aad";
+      cityTitle.style.margin = "30px 0 10px 0";
+      cityTitle.style.fontSize = "24px";
+      container.appendChild(cityTitle);
 
-  <!-- Filter Section -->
-<section class="filters-wrapper">
-  <h2>Filter Hotels</h2>
-  <div class="filters">
-    <select id="cityFilter">
-      <option value="">All Cities</option>
-    </select>
-    <select id="ratingFilter">
-      <option value="">All Ratings</option>
-      <option value="9">9+ Excellent</option>
-      <option value="8.5">8.5+ Very Good</option>
-      <option value="8">8+ Good</option>
-    </select>
-    <input type="number" id="minPrice" placeholder="Min Price (₹)">
-    <input type="number" id="maxPrice" placeholder="Max Price (₹)">
-    <button id="applyFilters">Apply Filters</button>
-  </div>
-</section>
+      const cityContainer = document.createElement("div");
+      cityContainer.classList.add("card-container");
 
-  <!-- Hotels Section -->
-  <section class="hotels">
-    <h2>Discover Popular Hotels</h2>
-    <div id="hotelContainer">
-      <!-- Hotels will be dynamically generated here -->
-    </div>
-  </section>
+      groupedHotels[city].forEach(hotel => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+          <img src="${hotel.img}" alt="${hotel.name}, ${hotel.city}">
+          <h3>${hotel.name}</h3>
+          <p class="location">${hotel.city}</p>
+          <p class="rating">⭐ ${hotel.rating} · Excellent · ${hotel.reviews} reviews</p>
+          <p class="price">Starting from ₹${hotel.price}/night</p>
+          <button class="bookNow">Book Now</button>
+        `;
+        cityContainer.appendChild(card);
+      });
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
-  </footer>
+      container.appendChild(cityContainer);
+    }
 
-  <!-- Script -->
-  <script>
+    // Attach button events
+    document.querySelectorAll(".bookNow").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Hotel booking feature coming soon!");
+      });
+    });
+
+  } catch (error) {
+    console.error("Error loading hotels:", error);
+  }
+}
+
+// Load hotels when page is ready
+window.onload = loadHotels;
+
 const hotels = [
   // Goa
   {city: "Goa", name: "Seaside Hotel", rating: 9.1, reviews: 2100, price: 7000, img: "images/hotel1.png"},
@@ -94,8 +72,14 @@ const hotels = [
   {city: "Delhi", name: "City View Hotel", rating: 8.8, reviews: 1800, price: 7200, img: "images/hotel10.png"}
 ];
 
-// Populate city dropdown
+// DOM references
 const cityFilter = document.getElementById("cityFilter");
+const ratingFilter = document.getElementById("ratingFilter");
+const minPriceInput = document.getElementById("minPrice");
+const maxPriceInput = document.getElementById("maxPrice");
+const container = document.getElementById("hotelContainer");
+
+// Populate city dropdown dynamically
 const uniqueCities = [...new Set(hotels.map(h => h.city))];
 uniqueCities.forEach(city => {
   const option = document.createElement("option");
@@ -104,17 +88,21 @@ uniqueCities.forEach(city => {
   cityFilter.appendChild(option);
 });
 
-const container = document.getElementById("hotelContainer");
-
-// Function to render hotels
+// Render hotels
 function renderHotels(list) {
-  container.innerHTML = ""; // clear old results
+  container.innerHTML = "";
+
+  if (list.length === 0) {
+    container.innerHTML = "<p>No hotels found matching your filters.</p>";
+    return;
+  }
+
   const grouped = list.reduce((acc, h) => {
     if (!acc[h.city]) acc[h.city] = [];
     acc[h.city].push(h);
     return acc;
   }, {});
-  
+
   for (const city in grouped) {
     const cityTitle = document.createElement("h3");
     cityTitle.textContent = city;
@@ -135,7 +123,7 @@ function renderHotels(list) {
         <p class="location">${hotel.city}</p>
         <p class="rating">⭐ ${hotel.rating} · Excellent · ${hotel.reviews} reviews</p>
         <p class="price">Starting from ₹${hotel.price}/night</p>
-        <button class="bookNow">Bo  ok Now</button>
+        <button class="bookNow">Book Now</button>
       `;
       cityContainer.appendChild(card);
     });
@@ -143,7 +131,7 @@ function renderHotels(list) {
     container.appendChild(cityContainer);
   }
 
-  // Re-bind book buttons
+  // Add click for book buttons
   document.querySelectorAll(".bookNow").forEach(btn => {
     btn.addEventListener("click", () => {
       alert("Hotel booking feature coming soon!");
@@ -151,15 +139,12 @@ function renderHotels(list) {
   });
 }
 
-// Initial render
-renderHotels(hotels);
-
 // Apply filters
-document.getElementById("applyFilters").addEventListener("click", () => {
+function applyFilters() {
   const selectedCity = cityFilter.value;
-  const minPrice = parseInt(document.getElementById("minPrice").value) || 0;
-  const maxPrice = parseInt(document.getElementById("maxPrice").value) || Infinity;
-  const minRating = parseFloat(document.getElementById("ratingFilter").value) || 0;
+  const minPrice = parseInt(minPriceInput.value) || 0;
+  const maxPrice = parseInt(maxPriceInput.value) || Infinity;
+  const minRating = parseFloat(ratingFilter.value) || 0;
 
   const filtered = hotels.filter(h => {
     return (selectedCity === "" || h.city === selectedCity) &&
@@ -169,8 +154,11 @@ document.getElementById("applyFilters").addEventListener("click", () => {
   });
 
   renderHotels(filtered);
-});
+}
+
+// Button click
+document.getElementById("applyFilters").addEventListener("click", applyFilters);
+
+// Initial load
+renderHotels(hotels);
 </script>
-<script src="extra.js"></script>
-</body>
-</html>
