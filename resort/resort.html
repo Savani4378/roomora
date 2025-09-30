@@ -61,42 +61,15 @@
   <script>
 const resorts = [
   // Existing 10 cities (50 resorts) here...
-  {city: "Goa", name: "Beach Paradise", rating: 9.2, reviews: 2300, price: 15000, img: "images/resort1.png"},
-  {city: "Goa", name: "Sunset Retreat", rating: 9.0, reviews: 2100, price: 14000, img: "images/resort2.png"},
-  {city: "Goa", name: "Palm Haven", rating: 8.8, reviews: 1900, price: 13000, img: "images/resort3.png"},
-  {city: "Goa", name: "Sea Breeze Resort", rating: 9.1, reviews: 2500, price: 15500, img: "images/resort4.png"},
-  {city: "Goa", name: "Golden Sands", rating: 9.3, reviews: 2700, price: 16000, img: "images/resort5.png"},
+  {city: "Goa", name: "Beach Paradise", rating: 9.2, reviews: 2300, price: 15000, img: "https://imagedelivery.net/y9EHf1toWJTBqJVsQzJU4g/www.indianholiday.com/2025/06/W-Goa.png/w=650"},
+  {city: "Goa", name: "Sunset Retreat", rating: 9.0, reviews: 2100, price: 14000, img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/20/29/1b/the-lalit-golf-spa-resort.jpg?w=1600&h=900&s=1"},
+  {city: "Goa", name: "Palm Haven", rating: 8.8, reviews: 1900, price: 13000, img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/de/65/35/taj-fort-aguada-resort.jpg?w=1400&h=-1&s=1"},
+  {city: "Goa", name: "Golden Sands", rating: 9.3, reviews: 2700, price: 16000, img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/db/57/ea/caravela-beach-resort.jpg?w=1400&h=800&s=1"},
   // ... other 45 resorts from previous 9 cities
-  {city: "Delhi", name: "Capital View Resort", rating: 9.0, reviews: 2000, price: 14000, img: "images/resort46.png"},
-  {city: "Delhi", name: "City Lights Retreat", rating: 8.9, reviews: 1800, price: 13500, img: "images/resort47.png"},
-  {city: "Delhi", name: "Heritage Inn", rating: 9.1, reviews: 2100, price: 14500, img: "images/resort48.png"},
-  {city: "Delhi", name: "Garden View Villas", rating: 9.2, reviews: 2200, price: 15000, img: "images/resort49.png"},
-  {city: "Delhi", name: "Royal Capital Resort", rating: 9.3, reviews: 2300, price: 15500, img: "images/resort50.png"},
-
-  // ===== New 5 cities, 5 resorts each =====
-  {city: "Bangalore", name: "Silicon Retreat", rating: 9.0, reviews: 1800, price: 13500, img: "images/resort51.png"},
-  {city: "Bangalore", name: "Garden City Inn", rating: 8.9, reviews: 1700, price: 13000, img: "images/resort52.png"},
-  {city: "Bangalore", name: "Lakeside Resort", rating: 9.1, reviews: 1900, price: 14000, img: "images/resort53.png"},
-  {city: "Bangalore", name: "Green Haven", rating: 8.8, reviews: 1600, price: 12500, img: "images/resort54.png"},
-  {city: "Bangalore", name: "Royal Oak Retreat", rating: 9.2, reviews: 2000, price: 14500, img: "images/resort55.png"},
-
-  {city: "Hyderabad", name: "Pearl City Resort", rating: 9.1, reviews: 2000, price: 14000, img: "images/resort56.png"},
-  {city: "Hyderabad", name: "Nizam Retreat", rating: 9.0, reviews: 1900, price: 13500, img: "images/resort57.png"},
-  {city: "Hyderabad", name: "Hussain Sagar View", rating: 8.9, reviews: 1800, price: 13000, img: "images/resort58.png"},
-  {city: "Hyderabad", name: "Charminar Inn", rating: 9.2, reviews: 2100, price: 14500, img: "images/resort59.png"},
-  {city: "Hyderabad", name: "Royal Heritage", rating: 9.3, reviews: 2200, price: 15000, img: "images/resort60.png"},
-
-  {city: "Chennai", name: "Marina Bay Resort", rating: 8.9, reviews: 1700, price: 12500, img: "images/resort61.png"},
-  {city: "Chennai", name: "Beachfront Retreat", rating: 9.0, reviews: 1800, price: 13000, img: "images/resort62.png"},
-  {city: "Chennai", name: "Coral Cove Resort", rating: 9.1, reviews: 1900, price: 13500, img: "images/resort63.png"},
-  {city: "Chennai", name: "Sunset Villas", rating: 8.8, reviews: 1600, price: 12000, img: "images/resort64.png"},
-  {city: "Chennai", name: "Royal Palm Retreat", rating: 9.2, reviews: 2000, price: 14000, img: "images/resort65.png"},
-
-  {city: "Pune", name: "Hillside Retreat", rating: 9.0, reviews: 1800, price: 13000, img: "images/resort66.png"},
-  {city: "Pune", name: "Valley View Resort", rating: 9.1, reviews: 1900, price: 13500, img: "images/resort67.png"},
-  {city: "Pune", name: "Green Meadows", rating: 8.9, reviews: 1700, price: 12500, img: "images/resort68.png"},
-  {city: "Pune", name: "Royal Hills Inn", rating: 9.2, reviews: 2000, price: 14000, img: "images/resort69.png"},
-  {city: "Pune", name: "Lakeview Retreat", rating: 9.3, reviews: 2100, price: 14500, img: "images/resort70.png"}
+  {city: "Delhi", name: "Capital View Resort", rating: 9.0, reviews: 2000, price: 14000, img: "https://r1imghtlak.mmtcdn.com/7420dd48-4178-4129-9274-d852b4800686.jpg?&output-quality=75&downsize=520:350&crop=520:350;51,0&output-format=jpg&downsize=480:336&crop=480:336"},
+  {city: "Delhi", name: "City Lights Retreat", rating: 8.9, reviews: 1800, price: 13500, img: "https://s7ap1.scene7.com/is/image/incredibleindia/Top-Picks-for-a-Luxury-Weekend-Break-from-Delhi4-hero?qlt=82&ts=1742170505991"},
+  {city: "Delhi", name: "Heritage Inn", rating: 9.1, reviews: 2100, price: 14500, img: "https://www.holidify.com/images/cmsuploads/compressed/15919725_20210425195332.jpg"},
+  {city: "Delhi", name: "Garden View Villas", rating: 9.2, reviews: 2200, price: 15000, img: "https://www.holidify.com/images/cmsuploads/compressed/14248063_20221125011124.jpg"},
 ];
 
 // Existing code to group by city and generate cards stays the same
