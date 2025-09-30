@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="https://img.freepik.com/premium-photo/blue-neon-font-letter-r-3d-rendering-isolated-black-background_923894-41291.jpg?w=360">
   <title>Roomora.com | Book Your Stay</title>
-  <link rel="stylesheet" href="/index/style.css">
+  <!-- FIXED: removed absolute path -->
+  <link rel="stylesheet" href="index/style.css">
 </head>
 
 <body>
@@ -14,28 +15,29 @@
   <header class="navbar">
     <div class="logo">Roomora<span>.com</span></div>
     <nav class="menu">
-      <a href="/index/index.html">Home</a>
-      <a href="/hotel/hotel.html">Hotel</a>
-      <a href="/resort/resort.html">Resort</a>
-      <a href="/guest/guest.html">Guest House</a>
-      <a href="/flights/flights.html">Flights</a>
-      <a href="/vehicle/vehicle.html">Vehicles</a>
-      <a href="/places/places.html">Famous Places</a>
+      <!-- FIXED: relative paths -->
+      <a href="index/index.html">Home</a>
+      <a href="hotel/hotel.html">Hotel</a>
+      <a href="resort/resort.html">Resort</a>
+      <a href="guest/guest.html">Guest House</a>
+      <a href="flights/flights.html">Flights</a>
+      <a href="vehicle/vehicle.html">Vehicles</a>
+      <a href="places/places.html">Famous Places</a>
     </nav>
 
     <nav>
       <ul>
         <div class="auth-buttons">
-
           <!-- Profile Icon -->
           <div class="profile-dropdown">
-  <img src="https://wallpapers.com/images/hd/default-profile-placeholder-mfby2k0rliz1szsn.jpg" alt="Profile Icon" class="profile-icon">
-  <div class="dropdown-content">
-    <a href="/register/register.html">Register</a>
-    <a href="/register/login.html">Login</a>
-  </div>
-</div>
-        </div>  
+            <img src="https://wallpapers.com/images/hd/default-profile-placeholder-mfby2k0rliz1szsn.jpg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <!-- FIXED: relative paths -->
+              <a href="register/register.html">Register</a>
+              <a href="register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
       </ul>
     </nav>
   </header>
@@ -219,6 +221,7 @@
   </footer>
 
   <!-- External JS -->
-  <script src="/index/script.js"></script>
+  <!-- FIXED: relative path -->
+  <script src="index/script.js"></script>
 </body>
 </html>
