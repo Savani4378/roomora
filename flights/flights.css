@@ -1,0 +1,217 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004aad;
+  color: white;
+  padding: 10px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ffcc00;
+}
+
+.menu a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #ffcc00;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .btn-auth {
+  padding: 8px 16px;
+  background: #ffcc00;
+  color: #004aad;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn-auth:hover {
+  background: #e6b800;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+
+  .profile-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f2f2f2;
+  }
+
+/* Flight Booking Section */
+.flight-booking {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.flight-booking h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004aad;
+}
+
+.flight-booking form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.flight-booking label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.flight-booking input,
+.flight-booking select,
+.flight-booking button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.flight-booking input:focus,
+.flight-booking select:focus {
+  border-color: #004aad;
+  outline: none;
+}
+
+.flight-booking button {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  grid-column: span 2;
+  transition: background 0.3s;
+}
+
+.flight-booking button:hover {
+  background: #003580;
+}
+
+/* Flight Results */
+#results {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+#results h3 {
+  margin-bottom: 15px;
+  color: #004aad;
+}
+
+#results .card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#results .card h4 {
+  margin-bottom: 10px;
+}
+
+#results .card p {
+  margin: 5px 0;
+}
+
+#results .card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#results .card button:hover {
+  background: #ffb400;
+}

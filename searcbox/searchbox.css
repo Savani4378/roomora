@@ -1,0 +1,82 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* =========================
+   Search Box
+========================= */
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.search-box select,
+.search-box input[type="date"],
+.search-box input[type="text"] {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  flex: 1 1 200px;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-box select:focus,
+.search-box input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+  outline: none;
+}
+
+/* =========================
+   Search Button
+========================= */
+.search-box button {
+  padding: 12px 20px;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-box button:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+.search-box button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+}

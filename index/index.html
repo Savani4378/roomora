@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="https://img.freepik.com/premium-photo/blue-neon-font-letter-r-3d-rendering-isolated-black-background_923894-41291.jpg?w=360">
+  <title>Roomora.com | Book Your Stay</title>
+  <link rel="stylesheet" href="/index/style.css">
+</head>
+
+<body>
+  <!--Title Bar-->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+  <img src="https://wallpapers.com/images/hd/default-profile-placeholder-mfby2k0rliz1szsn.jpg" alt="Profile Icon" class="profile-icon">
+  <div class="dropdown-content">
+    <a href="/register/register.html">Register</a>
+    <a href="/register/login.html">Login</a>
+  </div>
+</div>
+        </div>  
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <div class="background-swipe">
+        <div class="content"></div>
+      </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <select id="destination">
+        <option value="">-- Select a city --</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Goa">Goa</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Agra">Agra</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Shimla">Shimla</option>
+        <option value="Ooty">Ooty</option>
+        <option value="Manali">Manali</option>
+        <option value="Maldives">Maldives</option>
+        <option value="Dubai">Dubai</option>
+        <option value="Singapore">Singapore</option>
+        <option value="London">London</option>
+        <option value="New York">New York</option>
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+      </select>
+
+      <input type="date" id="checkin">
+      <input type="date" id="checkout">
+
+      <!-- Guests + Rooms -->
+      <div class="guests-box">
+        <input type="text" id="guestsInput" placeholder="2 persons · 1 room" readonly>
+        <div class="dropdown" id="guestsDropdown" style="display:none;">
+          <label>Persons:
+            <input type="number" id="persons" min="1" max="10" value="2">
+          </label>
+          <br>
+          <label>Rooms:
+            <input type="number" id="rooms" min="1" max="5" value="1">
+          </label>
+          <br>
+          <button id="applyGuests">Apply</button>
+        </div>
+      </div>
+
+      <button id="searchBtn">Search</button>
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section class="rooms">
+    <h2>Select your favorite room</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/103705059.jpg?k=9e078265b31ad1815a573da8ed2a665f863e3925e1efd730df703421868a2ada&o=" alt="type1">
+        <h3>Your luxury</h3>
+        <p class="location">Taj, Mumbai</p>
+        <p class="rating">⭐ 8.7 · Fabulous · 11,064 reviews</p>
+        <p class="price">Starting from ₹ 50,231</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.luxuryescapes.com/fl_progressive,q_auto:best,c_scale,w_600,dpr_2.0/ky8oxwyu4et2iaamy63q.webp" alt="type2">
+        <h3>Your peace sleep</h3>
+        <p class="location">Goa, India</p>
+        <p class="rating">⭐ 8.8 · Fabulous · 595 reviews</p>
+        <p class="price">Starting from ₹ 22,202</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2019/09/TAJ-PALACE-NEW-DELHI.jpeg?w=970&ssl=1" alt="type3">
+        <h3>For better need</h3>
+        <p class="location">New Delhi</p>
+        <p class="rating">⭐ 7.0 · Good · 595 reviews</p>
+        <p class="price">Starting from ₹ 10,202</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Section -->
+  <section class="food">
+    <h3>Food Area</h3>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/6b/20/90/indulge-in-the-wholesome.jpg?w=1400&h=800&s=1" alt="Taj Mumbai">
+        <h3>Clear & Healthy</h3>
+        <p class="location">Cirtus cafe, Mumbai, India</p>
+        <p class="rating">⭐10.0</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/eb/ee/c0/getlstd-property-photo.jpg?w=1400&h=-1&s=1" alt="Goa">
+        <h3>Food with Views</h3>
+        <p class="location">Kava cafe, Goa, India</p>
+        <p class="rating">⭐10.0</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://imgmediagumlet.lbb.in/media/2024/11/672b4ee204855664de195877_1730891490724.jpg" alt="Delhi">
+        <h3>Traditional Environment Cafe</h3>
+        <p class="location">Cafe Lota, New Delhi, India</p>
+        <p class="rating">⭐9.0</p>
+        <button class="bookNow">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="top-links">
+      <a href="#">Countries</a> · <a href="#">Regions</a> · <a href="#">Cities</a> · <a href="#">Districts</a> ·
+      <a href="#">Airports</a> · <a href="#">Hotels</a> · <a href="#">Places of interest</a> ·
+      <a href="#">Holiday Homes</a> · <a href="#">Apartments</a> · <a href="#">Resorts</a> · <a href="#">Villas</a> ·
+      <a href="#">Hostels</a> · <a href="#">B&amp;Bs</a> · <a href="#">Guest Houses</a> · <a href="#">Unique places</a> ·
+      <a href="#">All destinations</a> · <a href="#">All flight destinations</a> · <a href="#">All car hire</a> ·
+      <a href="#">Guides</a> · <a href="#">Reviews</a>
+    </div>
+
+    <div class="footer-columns">
+      <div>
+        <h4>Support</h4>
+        <a href="#">Coronavirus (COVID-19) FAQs</a>
+        <a href="#">Manage your trips</a>
+        <a href="#">Contact Customer Service</a>
+        <a href="#">Safety resource centre</a>
+      </div>
+      <div>
+        <h4>Discover</h4>
+        <a href="#">Genius loyalty programme</a>
+        <a href="#">Seasonal and holiday deals</a>
+        <a href="#">Travel articles</a>
+        <a href="#">Booking.com for Business</a>
+      </div>
+      <div>
+        <h4>Terms and settings</h4>
+        <a href="#">Privacy &amp; cookies</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Accessibility Statement</a>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <a href="#">Extranet login</a>
+        <a href="#">Partner help</a>
+        <a href="#">List your property</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="#">About Booking.com</a>
+        <a href="#">How we work</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Press centre</a>
+      </div>
+    </div>
+
+    <div class="currency">
+      <img src="https://flagcdn.com/w20/in.png" alt="India Flag"> INR
+    </div>
+
+    <div class="bottom-text">
+      <p>Hotel.com is part of Booking Holdings Inc., the world leader in online travel and related services.</p>
+      <p>&copy; 1996–2025 Booking.com™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="/index/script.js"></script>
+</body>
+</html>

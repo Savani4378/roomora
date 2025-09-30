@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Roomora | Hotel Booking</title>
+  <link rel="stylesheet" href="hotel.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hotel-hero">
+    <h1>Book Best Hotels</h1>
+    <p>Find affordable and luxurious hotels in top cities.</p>
+  </section>
+
+  <!-- Filter Section -->
+<section class="filters-wrapper">
+  <h2>Filter Hotels</h2>
+  <div class="filters">
+    <select id="cityFilter">
+      <option value="">All Cities</option>
+    </select>
+    <select id="ratingFilter">
+      <option value="">All Ratings</option>
+      <option value="9">9+ Excellent</option>
+      <option value="8.5">8.5+ Very Good</option>
+      <option value="8">8+ Good</option>
+    </select>
+    <input type="number" id="minPrice" placeholder="Min Price (₹)">
+    <input type="number" id="maxPrice" placeholder="Max Price (₹)">
+    <button id="applyFilters">Apply Filters</button>
+  </div>
+</section>
+
+  <!-- Hotels Section -->
+  <section class="hotels">
+    <h2>Discover Popular Hotels</h2>
+    <div id="hotelContainer">
+      <!-- Hotels will be dynamically generated here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+const hotels = [
+  // Goa
+  {city: "Goa", name: "Seaside Hotel", rating: 9.1, reviews: 2100, price: 7000, img: "images/hotel1.png"},
+  {city: "Goa", name: "Ocean View Inn", rating: 8.9, reviews: 1900, price: 6500, img: "images/hotel2.png"},
+  {city: "Goa", name: "Palm Residency", rating: 9.0, reviews: 2000, price: 7200, img: "images/hotel3.png"},
+  {city: "Goa", name: "Blue Lagoon Hotel", rating: 9.2, reviews: 2200, price: 7500, img: "images/hotel4.png"},
+  {city: "Goa", name: "Sunshine Stay", rating: 8.8, reviews: 1800, price: 6000, img: "images/hotel5.png"},
+
+  // Delhi
+  {city: "Delhi", name: "Metro City Hotel", rating: 9.0, reviews: 2100, price: 8000, img: "images/hotel6.png"},
+  {city: "Delhi", name: "Capital Comfort Inn", rating: 8.9, reviews: 1900, price: 7500, img: "images/hotel7.png"},
+  {city: "Delhi", name: "Royal Heritage Hotel", rating: 9.2, reviews: 2200, price: 8200, img: "images/hotel8.png"},
+  {city: "Delhi", name: "Garden Residency", rating: 9.1, reviews: 2000, price: 7900, img: "images/hotel9.png"},
+  {city: "Delhi", name: "City View Hotel", rating: 8.8, reviews: 1800, price: 7200, img: "images/hotel10.png"}
+];
+
+// Populate city dropdown
+const cityFilter = document.getElementById("cityFilter");
+const uniqueCities = [...new Set(hotels.map(h => h.city))];
+uniqueCities.forEach(city => {
+  const option = document.createElement("option");
+  option.value = city;
+  option.textContent = city;
+  cityFilter.appendChild(option);
+});
+
+const container = document.getElementById("hotelContainer");
+
+// Function to render hotels
+function renderHotels(list) {
+  container.innerHTML = ""; // clear old results
+  const grouped = list.reduce((acc, h) => {
+    if (!acc[h.city]) acc[h.city] = [];
+    acc[h.city].push(h);
+    return acc;
+  }, {});
+  
+  for (const city in grouped) {
+    const cityTitle = document.createElement("h3");
+    cityTitle.textContent = city;
+    cityTitle.style.color = "#004aad";
+    cityTitle.style.margin = "30px 0 10px 0";
+    cityTitle.style.fontSize = "24px";
+    container.appendChild(cityTitle);
+
+    const cityContainer = document.createElement("div");
+    cityContainer.classList.add("card-container");
+
+    grouped[city].forEach(hotel => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${hotel.img}" alt="${hotel.name}, ${hotel.city}">
+        <h3>${hotel.name}</h3>
+        <p class="location">${hotel.city}</p>
+        <p class="rating">⭐ ${hotel.rating} · Excellent · ${hotel.reviews} reviews</p>
+        <p class="price">Starting from ₹${hotel.price}/night</p>
+        <button class="bookNow">Book Now</button>
+      `;
+      cityContainer.appendChild(card);
+    });
+
+    container.appendChild(cityContainer);
+  }
+
+  // Re-bind book buttons
+  document.querySelectorAll(".bookNow").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert("Hotel booking feature coming soon!");
+    });
+  });
+}
+
+// Initial render
+renderHotels(hotels);
+
+// Apply filters
+document.getElementById("applyFilters").addEventListener("click", () => {
+  const selectedCity = cityFilter.value;
+  const minPrice = parseInt(document.getElementById("minPrice").value) || 0;
+  const maxPrice = parseInt(document.getElementById("maxPrice").value) || Infinity;
+  const minRating = parseFloat(document.getElementById("ratingFilter").value) || 0;
+
+  const filtered = hotels.filter(h => {
+    return (selectedCity === "" || h.city === selectedCity) &&
+           h.price >= minPrice &&
+           h.price <= maxPrice &&
+           h.rating >= minRating;
+  });
+
+  renderHotels(filtered);
+});
+</script>
+<script src="extra.js"></script>
+</body>
+</html>

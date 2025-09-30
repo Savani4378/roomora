@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Famous Places - Roomora</title>
+  <link rel="stylesheet" href="places.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="places-hero">
+    <h1>Explore Famous Places</h1>
+    <p>Discover breathtaking destinations around the world.</p>
+  </section>
+
+  <!-- Places Section -->
+  <section class="places-list">
+    <div id="placesContainer">
+      <!-- Places will be dynamically generated here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+const places = [
+  // Delhi
+  {city: "Delhi", name: "India Gate", img: "https://wallpaperaccess.com/full/4455652.jpg"},
+  {city: "Delhi", name: "Red Fort", img: "https://wallpapercave.com/wp/wp10702801.jpg"},
+  {city: "Delhi", name: "Qutub Minar", img: "https://ichef.bbci.co.uk/news/976/cpsprodpb/143BF/production/_124897828_gettyimages-541363304-170667a.jpg"},
+
+
+  // Jaipur
+  {city: "Jaipur", name: "Hawa Mahal", img: "https://media.istockphoto.com/id/482557081/photo/hawa-mahal-jaipur-india.jpg?s=612x612&w=0&k=20&c=A6qCUjoNH74nXCkB07RNgK3eIt2mun8PgsLPw9dNkVI="},
+  {city: "Jaipur", name: "Amber Fort", img: "https://t4.ftcdn.net/jpg/01/78/17/43/360_F_178174345_okDJQAMf69mBulq4lO5a4Ce9LFa948Jj.jpg"},
+  {city: "Jaipur", name: "Jantar Mantar", img: "https://media.istockphoto.com/id/487736282/photo/jantar-mantar-new-delhi-india-cngltrv1109.jpg?s=612x612&w=0&k=20&c=51feEMm4c4pPtpAh2sxLHnwSpJVkDUVJySrulcbZPDM="},
+
+  // Agra
+  {city: "Agra", name: "Taj Mahal", img: "https://media.istockphoto.com/id/519330110/photo/taj-mahal-agra-india-monument-of-love-in-blue-sky.jpg?s=612x612&w=0&k=20&c=Uma6Q7KduznA6jUKcSquFP1iHHiw8UXcZEYVLONrmaQ="},
+  {city: "Agra", name: "Agra Fort", img: "https://media.istockphoto.com/id/1169495248/photo/agra-fort-medieval-indian-fort-at-agra-india-at-sunrise.jpg?s=612x612&w=0&k=20&c=EI9BXzCutx2gRuPCFUDSirZg9Hfc7G_kGfFbmVBmSEc="},
+  {city: "Agra", name: "Fatehpur Sikri", img: "https://t3.ftcdn.net/jpg/02/02/60/78/360_F_202607829_H5Ice2bA9tAEnrBOfn8VRfaFxjpEInEQ.jpg"},
+
+
+];
+
+// Group by city
+const groupedPlaces = places.reduce((acc, place) => {
+  if (!acc[place.city]) acc[place.city] = [];
+  acc[place.city].push(place);
+  return acc;
+}, {});
+
+const container = document.getElementById("placesContainer");
+
+// Generate HTML per city
+for (const city in groupedPlaces) {
+  const cityTitle = document.createElement("h2");
+  cityTitle.textContent = city;
+  cityTitle.style.color = "#004aad";
+  cityTitle.style.margin = "30px 0 15px 0";
+  container.appendChild(cityTitle);
+
+  const cityContainer = document.createElement("div");
+  cityContainer.classList.add("city-section");
+
+  groupedPlaces[city].forEach(place => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${place.img}" alt="${place.name}" loading="lazy">
+      <h3>${place.name}</h3>
+      <p>${place.city}</p>
+      <button class="explore-btn">Explore</button>
+    `;
+    cityContainer.appendChild(card);
+  });
+
+  container.appendChild(cityContainer);
+}
+
+// Explore button click
+document.querySelectorAll(".explore-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Exploration details coming soon!");
+  });
+});
+  </script>
+
+</body>
+</html>

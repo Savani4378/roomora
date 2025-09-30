@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roomora | Guesthouse Booking</title>
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <link rel="stylesheet" href="guest.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="guesthouse-hero">
+    <h1>Book Cozy Guesthouses</h1>
+    <p>Comfortable stays at affordable prices.</p>
+  </section>
+
+  <!-- Guesthouses Section -->
+  <section class="guesthouses">
+    <h2>Popular Guesthouses</h2>
+    <div class="card-container" id="guesthouseContainer">
+      <!-- Cards will be dynamically added here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const guesthouses = [
+      {city: "Goa", name: "Sunny Stay Guesthouse", rating: 9.0, reviews: 1200, price: 3500, img: "images/guesthouse1.jpg"},
+      {city: "Goa", name: "Sea View Guesthouse", rating: 8.8, reviews: 1100, price: 3200, img: "images/guesthouse2.jpg"},
+      {city: "Bangalore", name: "Garden Inn", rating: 9.2, reviews: 900, price: 4000, img: "images/guesthouse3.jpg"},
+      {city: "Bangalore", name: "Cozy Nest", rating: 9.1, reviews: 850, price: 3800, img: "images/guesthouse4.jpg"},
+      {city: "Hyderabad", name: "Pearl Guesthouse", rating: 9.3, reviews: 1000, price: 3600, img: "images/guesthouse5.jpg"},
+      {city: "Hyderabad", name: "City Center Stay", rating: 8.9, reviews: 950, price: 3400, img: "images/guesthouse6.jpg"},
+      {city: "Pune", name: "Hillside Guesthouse", rating: 9.0, reviews: 870, price: 3300, img: "images/guesthouse7.jpg"},
+      {city: "Pune", name: "Lakeview Inn", rating: 9.1, reviews: 900, price: 3500, img: "images/guesthouse8.jpg"}
+    ];
+
+    const container = document.getElementById("guesthouseContainer");
+
+    guesthouses.forEach(gh => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${gh.img}" alt="${gh.name}, ${gh.city}">
+        <h3>${gh.name}</h3>
+        <p class="location">${gh.city}</p>
+        <p class="rating">⭐ ${gh.rating} · Excellent · ${gh.reviews} reviews</p>
+        <p class="price">Starting from ₹${gh.price}/night</p>
+        <button class="bookNow">Book Now</button>
+      `;
+      container.appendChild(card);
+    });
+
+    document.querySelectorAll(".bookNow").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Guesthouse booking feature coming soon!");
+      });
+    });
+  </script>
+
+</body>
+</html>

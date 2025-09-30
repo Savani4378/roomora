@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Flight Booking - Roomora</title>
+  <link rel="stylesheet" href="flights.css">
+</head>
+<body>
+
+  <!-- Navbar (reuse same as index.html) -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="flight-booking">
+    <h2>Book Your Flight</h2>
+    <form id="flightForm">
+      <label>From:</label>
+      <input type="text" name="from" placeholder="City or Airport" required>
+
+      <label>To:</label>
+      <input type="text" name="to" placeholder="City or Airport" required>
+
+      <label>Departure Date:</label>
+      <input type="date" name="depart" required>
+
+      <label>Return Date:</label>
+      <input type="date" name="return">
+
+      <label>Passengers:</label>
+      <input type="number" name="passengers" value="1" min="1" required>
+
+      <label>Class:</label>
+      <select name="class">
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="First">First</option>
+      </select>
+
+      <button type="submit">Search Flights</button>
+    </form>
+  </section>
+
+  <section id="results"></section>
+
+  <script>
+    document.getElementById("flightForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let from = e.target.from.value;
+      let to = e.target.to.value;
+      let depart = e.target.depart.value;
+      let ret = e.target.return.value;
+      let passengers = e.target.passengers.value;
+      let flightClass = e.target.class.value;
+
+      document.getElementById("results").innerHTML = `
+        <h3>Available Flights</h3>
+        <p>From: ${from} → To: ${to}</p>
+        <p>Departure: ${depart} ${ret ? "| Return: " + ret : ""}</p>
+        <p>Passengers: ${passengers} | Class: ${flightClass}</p>
+        <div class="card">
+          <h4>Air India</h4>
+          <p>Non-stop · 2h 30m</p>
+          <p>Price: ₹8,999</p>
+          <button onclick="alert('Booking feature coming soon!')">Book Now</button>
+        </div>
+        <div class="card">
+          <h4>IndiGo</h4>
+          <p>1 Stop · 3h 45m</p>
+          <p>Price: ₹7,499</p>
+          <button onclick="alert('Booking feature coming soon!')">Book Now</button>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>

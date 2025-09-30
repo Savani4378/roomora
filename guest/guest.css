@@ -1,0 +1,256 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  position: sticky;
+  background-color: #004aad;
+  color: #fff;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ffd700;
+}
+
+.menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.menu a.active {
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .btn-auth {
+  padding: 8px 16px;
+  background: #ffcc00;
+  color: #004aad;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn-auth:hover {
+  background: #e6b800;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+
+  .profile-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f2f2f2;
+  }
+
+/* Hero Section */
+.guesthouse-hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: url('/images/H6.jpg') center/cover no-repeat;
+  color: #ffffff;
+}
+
+.guesthouse-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.guesthouse-hero p {
+  font-size: 18px;
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* Guesthouse Cards */
+.guesthouses {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.guesthouses h2 {
+  color: #004aad;
+  margin-bottom: 30px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 15px 10px 5px 10px;
+  color: #004aad;
+}
+
+.card .location {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.card .rating {
+  margin: 5px 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+.card .price {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #004aad;
+}
+
+.card button {
+  margin: 12px;
+  padding: 10px 16px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #e6b800;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #004aad;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  nav.menu {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .card-container {
+    gap: 15px;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media(max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .guesthouse-hero h1 {
+    font-size: 32px;
+  }
+
+  .guesthouse-hero p {
+    font-size: 16px;
+  }
+}

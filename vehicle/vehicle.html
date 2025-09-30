@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Roomora | Vehicle booking</title>
+  <link rel="stylesheet" href="vehicle.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="vehicle-hero">
+    <h1>Rent Your Vehicle</h1>
+    <p>Choose from cars, bikes, and taxis at affordable prices.</p>
+  </section>
+
+  <!-- Vehicle Rental Section -->
+  <section class="vehicle-list">
+    <h2>🚗 Vehicle Options</h2>
+    <div class="card">
+      <img src="https://media.istockphoto.com/id/170107445/photo/white-smart-car.jpg?s=612x612&w=0&k=20&c=PRHWIYHunkjEy0K8CusBaNc-KHgF_s0sXxNHMmCuRwA=" alt="Luxury Car">
+      <h3>Luxury Car</h3>
+      <p>Price: ₹5000/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Flarge%2Fmahindra%2Fxuv500%2Fmahindra-xuv500.jpg%3Fv%3D51&w=1920&q=90" alt="SUV">
+      <h3>SUV</h3>
+      <p>Price: ₹3500/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://ic4.maxabout.us/tr:w-380/autos/tw_india//N/2022/2/new-honda-shine-125-price-in-india-2.jpg" alt="Bike">
+      <h3>Bike</h3>
+      <p>Price: ₹1200/day</p>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+  </section>
+
+  <!-- Taxi Booking Section -->
+  <section class="taxi-list" id="taxi">
+    <h2>🚖 Taxi Booking</h2>
+    <div class="card">
+      <img src="https://d3jbu7vaxvlagf.cloudfront.net/small/v2/category_media/image_17131835045691.jpeg" alt="Standard Taxi">
+      <h3>Standard Taxi</h3>
+      <p>Price: ₹20/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+
+    <div class="card">
+      <img src="https://d3jbu7vaxvlagf.cloudfront.net/small/v2/category_media/image_17098074267583.jpeg" alt="Premium Taxi">
+      <h3>Premium Taxi</h3>
+      <p>Price: ₹40/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+
+    <div class="card">
+      <img src="https://asiaplustj.info/sites/default/files/articles/313922/%D1%82%D0%B0%D0%BA%D1%81%D0%B8.jpg" alt="Electric Taxi">
+      <h3>Eco-friendly Taxi</h3>
+      <p>Price: ₹25/km</p>
+      <button class="book-taxi">Book Taxi</button>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    document.querySelectorAll(".rent-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Vehicle rental booking coming soon!");
+      });
+    });
+
+    document.querySelectorAll(".book-taxi").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Taxi booking feature coming soon!");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="logo.webp">
+  <title>Roomora | Resort Booking</title>
+  <link rel="stylesheet" href="resort.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Roomora<span>.com</span></div>
+    <nav class="menu">
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
+    </nav>
+
+    <nav>
+      <ul>
+        <div class="auth-buttons">
+
+          <!-- Profile Icon -->
+          <div class="profile-dropdown">
+            <img src="/images/I1.jpeg" alt="Profile Icon" class="profile-icon">
+            <div class="dropdown-content">
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+<!-- Hero Section -->
+  <section class="resort-hero">
+    <h1>Book Best Resorts</h1>
+    <p>Choose from all available rooms at affordable prices.</p>
+  </section>
+
+  <!-- Resorts Section -->
+  <section class="resorts">
+    <h2>Discover Beautiful Resorts</h2>
+    <div id="resortContainer">
+      <!-- Resorts will be dynamically generated here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+const resorts = [
+  // Existing 10 cities (50 resorts) here...
+  {city: "Goa", name: "Beach Paradise", rating: 9.2, reviews: 2300, price: 15000, img: "images/resort1.png"},
+  {city: "Goa", name: "Sunset Retreat", rating: 9.0, reviews: 2100, price: 14000, img: "images/resort2.png"},
+  {city: "Goa", name: "Palm Haven", rating: 8.8, reviews: 1900, price: 13000, img: "images/resort3.png"},
+  {city: "Goa", name: "Sea Breeze Resort", rating: 9.1, reviews: 2500, price: 15500, img: "images/resort4.png"},
+  {city: "Goa", name: "Golden Sands", rating: 9.3, reviews: 2700, price: 16000, img: "images/resort5.png"},
+  // ... other 45 resorts from previous 9 cities
+  {city: "Delhi", name: "Capital View Resort", rating: 9.0, reviews: 2000, price: 14000, img: "images/resort46.png"},
+  {city: "Delhi", name: "City Lights Retreat", rating: 8.9, reviews: 1800, price: 13500, img: "images/resort47.png"},
+  {city: "Delhi", name: "Heritage Inn", rating: 9.1, reviews: 2100, price: 14500, img: "images/resort48.png"},
+  {city: "Delhi", name: "Garden View Villas", rating: 9.2, reviews: 2200, price: 15000, img: "images/resort49.png"},
+  {city: "Delhi", name: "Royal Capital Resort", rating: 9.3, reviews: 2300, price: 15500, img: "images/resort50.png"},
+
+  // ===== New 5 cities, 5 resorts each =====
+  {city: "Bangalore", name: "Silicon Retreat", rating: 9.0, reviews: 1800, price: 13500, img: "images/resort51.png"},
+  {city: "Bangalore", name: "Garden City Inn", rating: 8.9, reviews: 1700, price: 13000, img: "images/resort52.png"},
+  {city: "Bangalore", name: "Lakeside Resort", rating: 9.1, reviews: 1900, price: 14000, img: "images/resort53.png"},
+  {city: "Bangalore", name: "Green Haven", rating: 8.8, reviews: 1600, price: 12500, img: "images/resort54.png"},
+  {city: "Bangalore", name: "Royal Oak Retreat", rating: 9.2, reviews: 2000, price: 14500, img: "images/resort55.png"},
+
+  {city: "Hyderabad", name: "Pearl City Resort", rating: 9.1, reviews: 2000, price: 14000, img: "images/resort56.png"},
+  {city: "Hyderabad", name: "Nizam Retreat", rating: 9.0, reviews: 1900, price: 13500, img: "images/resort57.png"},
+  {city: "Hyderabad", name: "Hussain Sagar View", rating: 8.9, reviews: 1800, price: 13000, img: "images/resort58.png"},
+  {city: "Hyderabad", name: "Charminar Inn", rating: 9.2, reviews: 2100, price: 14500, img: "images/resort59.png"},
+  {city: "Hyderabad", name: "Royal Heritage", rating: 9.3, reviews: 2200, price: 15000, img: "images/resort60.png"},
+
+  {city: "Chennai", name: "Marina Bay Resort", rating: 8.9, reviews: 1700, price: 12500, img: "images/resort61.png"},
+  {city: "Chennai", name: "Beachfront Retreat", rating: 9.0, reviews: 1800, price: 13000, img: "images/resort62.png"},
+  {city: "Chennai", name: "Coral Cove Resort", rating: 9.1, reviews: 1900, price: 13500, img: "images/resort63.png"},
+  {city: "Chennai", name: "Sunset Villas", rating: 8.8, reviews: 1600, price: 12000, img: "images/resort64.png"},
+  {city: "Chennai", name: "Royal Palm Retreat", rating: 9.2, reviews: 2000, price: 14000, img: "images/resort65.png"},
+
+  {city: "Pune", name: "Hillside Retreat", rating: 9.0, reviews: 1800, price: 13000, img: "images/resort66.png"},
+  {city: "Pune", name: "Valley View Resort", rating: 9.1, reviews: 1900, price: 13500, img: "images/resort67.png"},
+  {city: "Pune", name: "Green Meadows", rating: 8.9, reviews: 1700, price: 12500, img: "images/resort68.png"},
+  {city: "Pune", name: "Royal Hills Inn", rating: 9.2, reviews: 2000, price: 14000, img: "images/resort69.png"},
+  {city: "Pune", name: "Lakeview Retreat", rating: 9.3, reviews: 2100, price: 14500, img: "images/resort70.png"}
+];
+
+// Existing code to group by city and generate cards stays the same
+const container = document.getElementById("resortContainer");
+
+// Group resorts by city
+const groupedResorts = resorts.reduce((acc, resort) => {
+  if (!acc[resort.city]) acc[resort.city] = [];
+  acc[resort.city].push(resort);
+  return acc;
+}, {});
+
+// Generate HTML per city
+for (const city in groupedResorts) {
+  // Add city title
+  const cityTitle = document.createElement("h3");
+  cityTitle.textContent = city;
+  cityTitle.style.color = "#004aad";
+  cityTitle.style.margin = "30px 0 10px 0";
+  cityTitle.style.fontSize = "24px";
+  container.appendChild(cityTitle);
+
+  // Create city resort container
+  const cityContainer = document.createElement("div");
+  cityContainer.classList.add("card-container");
+
+  groupedResorts[city].forEach(resort => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${resort.img}" alt="${resort.name}, ${resort.city}">
+      <h3>${resort.name}</h3>
+      <p class="location">${resort.city}</p>
+      <p class="rating">⭐ ${resort.rating} · Excellent · ${resort.reviews} reviews</p>
+      <p class="price">Starting from ₹${resort.price}/night</p>
+      <button class="bookNow">Book Now</button>
+    `;
+    cityContainer.appendChild(card);
+  });
+
+  container.appendChild(cityContainer);
+}
+
+// Book button click
+document.querySelectorAll(".bookNow").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Resort booking feature coming soon!");
+  });
+});
+</script>
+
+
+</body>
+</html>
