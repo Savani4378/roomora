@@ -13,13 +13,13 @@
   <header class="navbar">
     <div class="logo">Roomora<span>.com</span></div>
     <nav class="menu">
-      <a href="index/index.html">Home</a>
-      <a href="hotel/hotel.html">Hotel</a>
-      <a href="resort/resort.html">Resort</a>
-      <a href="guest/guest.html">Guest House</a>
-      <a href="flights/flights.html">Flights</a>
-      <a href="vehicle/vehicle.html">Vehicles</a>
-      <a href="places/places.html">Famous Places</a>
+      <a href="/index/index.html">Home</a>
+      <a href="/hotel/hotel.html">Hotel</a>
+      <a href="/resort/resort.html">Resort</a>
+      <a href="/guest/guest.html">Guest House</a>
+      <a href="/flights/flights.html">Flights</a>
+      <a href="/vehicle/vehicle.html">Vehicles</a>
+      <a href="/places/places.html">Famous Places</a>
     </nav>
 
     <nav>
@@ -30,8 +30,8 @@
           <div class="profile-dropdown">
             <img src="https://wallpapers.com/images/hd/default-profile-placeholder-mfby2k0rliz1szsn.jpg" alt="Profile Icon" class="profile-icon">
             <div class="dropdown-content">
-              <a href="register/register.html">Register</a>
-              <a href="register/login.html">Login</a>
+              <a href="/register/register.html">Register</a>
+              <a href="/register/login.html">Login</a>
             </div>
           </div>
         </div>
@@ -44,6 +44,25 @@
     <p>Choose from all available rooms at affordable prices.</p>
   </section>
 
+<!-- Filter Section -->
+<section class="filters-wrapper">
+  <h2>Filter Hotels</h2>
+  <div class="filters">
+    <select id="cityFilter">
+      <option value="">All Cities</option>
+    </select>
+    <select id="ratingFilter">
+      <option value="">All Ratings</option>
+      <option value="9">9+ Excellent</option>
+      <option value="8.5">8.5+ Very Good</option>
+      <option value="8">8+ Good</option>
+    </select>
+    <input type="number" id="minPrice" placeholder="Min Price (₹)">
+    <input type="number" id="maxPrice" placeholder="Max Price (₹)">
+    <button id="applyFilters">Apply Filters</button>
+  </div>
+</section>
+
   <!-- Resorts Section -->
   <section class="resorts">
     <h2>Discover Beautiful Resorts</h2>
@@ -54,7 +73,61 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Roomora.com · All rights reserved.</p>
+    <div class="top-links">
+      <a href="#">Countries</a> · <a href="#">Regions</a> · <a href="#">Cities</a> · <a href="#">Districts</a> ·
+      <a href="#">Airports</a> · <a href="/hotel/hotel.html">Hotels</a> · <a href="/places/places.html">Places of interest</a> · 
+      <a href="/resort/resort.html">Resorts</a> · <a href="/guest/guest.html">Villas</a> · 
+      <a href="/guest/guest.html">Guest Houses</a> · <a href="/places/places.html">Unique places</a> ·
+      <a href="#">All destinations</a> · <a href="#">All flight destinations</a> · <a href="/vehicle/vehicle.html">All car hire</a> ·
+      <a href="#">Guides</a> · <a href="#">Reviews</a>
+    </div>
+
+    
+
+    <div class="footer-columns">
+      <div>
+        <h4>Support</h4>
+        <a href="#">Coronavirus (COVID-19) FAQs</a>
+        <a href="#">Manage your trips</a>
+        <a href="#">Contact Customer Service</a>
+        <a href="#">Safety resource centre</a>
+      </div>
+      <div>
+        <h4>Discover</h4>
+        <a href="#">Genius loyalty programme</a>
+        <a href="#">Seasonal and holiday deals</a>
+        <a href="#">Travel articles</a>
+        <a href="#">Booking.com for Business</a>
+      </div>
+      <div>
+        <h4>Terms and settings</h4>
+        <a href="#">Privacy &amp; cookies</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Accessibility Statement</a>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <a href="#">Extranet login</a>
+        <a href="#">Partner help</a>
+        <a href="#">List your property</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="#">About Roomora.com</a>
+        <a href="#">How we work</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Press centre</a>
+      </div>
+    </div>
+
+    <div class="currency">
+      <img src="https://flagcdn.com/w20/in.png" alt="India Flag"> INR
+    </div>
+
+    <div class="bottom-text">
+      <p>Roomora.com is part of Booking Holdings Inc., the world leader in online travel and related services.</p>
+      <p>&copy; 2025 Roomora.com™. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- Script -->
@@ -119,6 +192,91 @@ document.querySelectorAll(".bookNow").forEach(btn => {
     alert("Resort booking feature coming soon!");
   });
 });
+
+// --- Populate City Filter dynamically ---
+const cityFilter = document.getElementById("cityFilter");
+const uniqueCities = [...new Set(resorts.map(r => r.city))];
+uniqueCities.forEach(city => {
+  const option = document.createElement("option");
+  option.value = city;
+  option.textContent = city;
+  cityFilter.appendChild(option);
+});
+
+// --- Function to render resorts ---
+function renderResorts(filteredResorts) {
+  container.innerHTML = ""; // Clear previous results
+
+  if (filteredResorts.length === 0) {
+    container.innerHTML = "<p>No resorts found for selected filters.</p>";
+    return;
+  }
+
+  // Group resorts by city
+  const grouped = filteredResorts.reduce((acc, resort) => {
+    if (!acc[resort.city]) acc[resort.city] = [];
+    acc[resort.city].push(resort);
+    return acc;
+  }, {});
+
+  for (const city in grouped) {
+    // City title
+    const cityTitle = document.createElement("h3");
+    cityTitle.textContent = city;
+    cityTitle.style.color = "#004aad";
+    cityTitle.style.margin = "30px 0 10px 0";
+    cityTitle.style.fontSize = "24px";
+    container.appendChild(cityTitle);
+
+    const cityContainer = document.createElement("div");
+    cityContainer.classList.add("card-container");
+
+    grouped[city].forEach(resort => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${resort.img}" alt="${resort.name}, ${resort.city}">
+        <h3>${resort.name}</h3>
+        <p class="location">${resort.city}</p>
+        <p class="rating">⭐ ${resort.rating} · Excellent · ${resort.reviews} reviews</p>
+        <p class="price">Starting from ₹${resort.price}/night</p>
+        <button class="bookNow">Book Now</button>
+      `;
+      cityContainer.appendChild(card);
+
+      card.querySelector(".bookNow").addEventListener("click", () => {
+        alert("Resort booking feature coming soon!");
+      });
+    });
+
+    container.appendChild(cityContainer);
+  }
+}
+
+// --- Initial render of all resorts ---
+renderResorts(resorts);
+
+// --- Filter Function ---
+function applyFilters() {
+  const selectedCity = cityFilter.value;
+  const selectedRating = parseFloat(document.getElementById("ratingFilter").value);
+  const minPrice = parseFloat(document.getElementById("minPrice").value);
+  const maxPrice = parseFloat(document.getElementById("maxPrice").value);
+
+  const filtered = resorts.filter(r => {
+    const matchCity = selectedCity ? r.city === selectedCity : true;
+    const matchRating = selectedRating ? r.rating >= selectedRating : true;
+    const matchMinPrice = !isNaN(minPrice) ? r.price >= minPrice : true;
+    const matchMaxPrice = !isNaN(maxPrice) ? r.price <= maxPrice : true;
+    return matchCity && matchRating && matchMinPrice && matchMaxPrice;
+  });
+
+  renderResorts(filtered);
+}
+
+// --- Attach filter button ---
+document.getElementById("applyFilters").addEventListener("click", applyFilters);
+
 </script>
 
 

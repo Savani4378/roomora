@@ -398,6 +398,7 @@ body {
   background: #e6b800;
 }
 
+
 /* ========== FOOTER ========== */
 footer {
   background: #f9f9f9;
@@ -418,6 +419,7 @@ footer .top-links a {
   margin: 0 6px;
   font-size: 13px;
 }
+
 
 .footer-columns {
   display: grid;

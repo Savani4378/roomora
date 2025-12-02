@@ -120,19 +120,21 @@ body {
 /* Hero section */
 .resort-hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 120px 20px;
   background: url("https://www.holidify.com/images/cmsuploads/compressed/31028337_20210122155324.jpg") center/cover repeat;
   color: white;
 }
 
 .resort-hero h1 {
-  font-size: 36px;
+   font-size: 36px;
   margin-bottom: 10px;
   color: white;
+  text-shadow: 2px 2px 6px #000;
 }
 
 .resort-hero p {
   font-size: 18px;
+  text-shadow: 1px 1px 4px #000;
 }
 
 /* ================= RESORTS SECTION ================= */
@@ -216,6 +218,55 @@ body {
 .card button:hover {
   background: #e6b800;
 }
+
+/* Filter section styling */
+.filters-wrapper {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.filters-wrapper h2 {
+  font-size: 20px;
+  color: #004aad;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filters select, 
+.filters input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filters button {
+  background: #004aad;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #003080;
+}
+
 
 /* ================= FOOTER ================= */
 footer {
